@@ -10,7 +10,7 @@ const errorText = document.getElementById("errorText");
 const closeError = document.getElementById("closeError");
 
 let calorieTracker = [];
-const dailyCalorieGoal = 2550; // Daglig kaloribudsjett
+const dailyCalorieGoal = 3250; // Daglig kaloribudsjett
 const circumference = 2 * Math.PI * 90; // 2 * π * radius
 
 // Last inn data fra localStorage når siden starter
