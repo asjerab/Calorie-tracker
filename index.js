@@ -70,7 +70,7 @@ const validateInput = () => {
   }
   
   if (!calories || isNaN(calories) || parseInt(calories) <= 0) {
-    showError('Vennligst skriv inn et gyldig antall kalorier');
+    showError('Skriv inn et gyldig tall');
     foodCaloriesInput.focus();
     return false;
   }
