@@ -106,6 +106,7 @@ body {
     border-radius: 100px;
     transition: all 0.2s;
     font-family: GilroySemiBold;
+    cursor: pointer;
 }
 
 .add-food-btn:hover {
