@@ -3,12 +3,14 @@
     "name": "Calorie Tracker",
     "short_name": "Calorie Tracker",
     "description": "Track your calorie intake and reach your daily goal",
-    "start_url": "/",
+    "start_url": "./index.html",
+    "scope": "./",
     "icons": [
-        {
-            "src": "public/CalorieTrackerIcon.png",
-            "sizes": "1024x1024",
-            "type": "image/png"
-        }
+      {
+        "src": "public/CalorieTrackerIcon.png",
+        "sizes": "1024x1024",
+        "type": "image/png"
+      }
     ]
-}
+  }
+  
