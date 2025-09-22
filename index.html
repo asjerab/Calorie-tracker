@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <nav  class="navTitle"> 
+        <h1>Calorie Tracker</h1>
+      </nav>
+
+      <div class="calories-left-container">
+        <h2>Kalorier igjen</h2>
+        <div class="progress-circle">
+          <svg class="progress-ring" width="200" height="200">
+            <circle
+              class="progress-ring-circle-bg"
+              stroke="#e0e0e0"
+              stroke-width="12"
+              fill="transparent"
+              r="90"
+              cx="100"
+              cy="100"
+            />
+            <circle
+              class="progress-ring-circle"
+              stroke="#588157"
+              stroke-width="12"
+              fill="transparent"
+              r="90"
+              cx="100"
+              cy="100"
+            />
+          </svg>
+          <div class="progress-text">
+            <span class="calories-number">2000</span>
+            <span class="calories-label">kcal igjen</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="food-container" id="food-container">
+      </div>
+
+      <div class="add-food-container">
+        <button class="add-food-btn">Add food</button>
+      </div>
+    </main>
+
+    <!-- Modal for å legge til mat -->
+    <div class="modal" id="addFoodModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Legg til mat</h2>
+          <button class="close-btn" id="closeModal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group">
+            <label for="foodName">Matnavn</label>
+            <input type="text" id="foodName" placeholder="F.eks. Eple" />
+          </div>
+          <div class="input-group">
+            <label for="foodCalories">Kalorier</label>
+            <input type="number" id="foodCalories" placeholder="F.eks. 100" min="1" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" id="cancelBtn">Avbryt</button>
+          <button class="btn btn-primary" id="addBtn">Legg til</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error message -->
+    <div class="error-message" id="errorMessage">
+      <span id="errorText"></span>
+      <button class="error-close" id="closeError">&times;</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

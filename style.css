@@ -1,0 +1,347 @@
+@font-face {
+    font-family: GilroySemiBold;
+    src: url(/gilroy-semi-bold.ttf);
+}
+
+
+body {
+    padding: 10px;
+    font-family: GilroySemiBold;
+}
+
+
+.font {
+    font-family: GilroySemiBold;
+}
+
+.navTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.calories-left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.calories-left-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.progress-circle {
+    position: relative;
+    display: inline-block;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+    transition: all 0.3s ease;
+}
+
+.progress-ring-circle {
+    transition: stroke-dasharray 0.3s ease, stroke 0.3s ease;
+    stroke-dasharray: 0 565.48; /* 2 * π * 90 */
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calories-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+}
+
+.calories-label {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Fargeendringer basert på progress */
+.progress-circle.warning .progress-ring-circle {
+    stroke: #ffa500;
+}
+
+.progress-circle.danger .progress-ring-circle {
+    stroke: #ff4444;
+}
+
+.progress-circle.success .progress-ring-circle {
+    stroke: #588157;
+}
+
+.add-food-container {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.add-food-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    background-color: #588157;
+    border: none;
+    color: white;
+    border-radius: 100px;
+    transition: all 0.2s;
+    font-family: GilroySemiBold;
+}
+
+.add-food-btn:hover {
+    background-color: #3a5a40;
+    scale: 1.05;
+}
+
+.add-food-btn:active {
+    scale: 0.95;
+}
+
+.food-container {
+    width: 100%;
+}
+
+.food-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #ffebee;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 1.3em;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.close-btn:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group:last-child {
+    margin-bottom: 0;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: GilroySemiBold;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #588157;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 24px 24px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-family: GilroySemiBold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary {
+    background-color: #f5f5f5;
+    color: #666;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-primary {
+    background-color: #588157;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3a5a40;
+}
+
+/* Error message */
+.error-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff4444;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
+    display: none;
+    align-items: center;
+    gap: 12px;
+    z-index: 1001;
+    animation: slideInRight 0.3s ease;
+}
+
+.error-message.show {
+    display: flex;
+}
+
+.error-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.error-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
