@@ -88,7 +88,7 @@ body {
 
 .add-food-container {
     position: absolute;
-    bottom: 15px;
+    bottom: 35px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
