@@ -1,0 +1,14 @@
+{
+    "display": "standalone",
+    "name": "Calorie Tracker",
+    "short_name": "Calorie Tracker",
+    "description": "Track your calorie intake and reach your daily goal",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "public/CalorieTrackerIcon.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        }
+    ]
+}

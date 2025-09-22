@@ -3,12 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Calorie Tracker</title>
+    <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="public/CalorieTrackerIcon.png" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover, initial-scale=1"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Calorie Tracker" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <main>
-      <nav  class="navTitle"> 
+      <nav class="navTitle">
         <h1>Calorie Tracker</h1>
       </nav>
 
@@ -42,11 +53,22 @@
         </div>
       </div>
 
-      <div class="food-container" id="food-container">
-      </div>
+      <div class="food-container" id="food-container"></div>
 
       <div class="add-food-container">
-        <button class="add-food-btn">Add food</button>
+        <button class="add-food-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="#000000"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"
+            ></path></svg
+          >Add food
+        </button>
       </div>
     </main>
 
@@ -64,7 +86,12 @@
           </div>
           <div class="input-group">
             <label for="foodCalories">Kalorier</label>
-            <input type="number" id="foodCalories" placeholder="F.eks. 100" min="1" />
+            <input
+              type="number"
+              id="foodCalories"
+              placeholder="F.eks. 100"
+              min="1"
+            />
           </div>
         </div>
         <div class="modal-footer">

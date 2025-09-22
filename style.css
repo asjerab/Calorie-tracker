@@ -1,6 +1,6 @@
 @font-face {
     font-family: GilroySemiBold;
-    src: url(/gilroy-semi-bold.ttf);
+    src: url(public/gilroy-semi-bold.ttf);
 }
 
 
@@ -107,7 +107,20 @@ body {
     transition: all 0.2s;
     font-family: GilroySemiBold;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
 }
+
+
+.add-food-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+
 
 .add-food-btn:hover {
     background-color: #3a5a40;
